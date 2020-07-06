@@ -9,10 +9,10 @@ console.log(zipCodeURL);
 
 var distance = {
    find: function(req, res, next) {
-       request(zipCodeURL + '/mile',
+       request(zipCodeURL + '/index.html',
        function (error, response, body) {
            if (!error && response.statusCode == 200) {
-               response = JSON.parse(body);
+               response = body;
                res.send(response);
            } else {
                console.log(response.statusCode + response.body + body);
